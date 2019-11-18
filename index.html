@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="process.js"></script>
+  <title>Ray Tracing Simulator</title>
+</head>
+<body>
+  <div id='sidebar'>
+    <h1>Ray Tracer</h1>
+    <ul>
+      <li>Angle:</li>
+      <li><input type="number" id="angle" value="45" oninput="update()" ></li>
+      <li>Length:</li>
+      <li><input type="number" id="length" value="50" oninput="update()" ></li>
+      <li>Thickness:</li>
+      <li><input type="number" id="thickness" value="20" oninput="update()" ></li>
+    </ul>
+  </div>
+  <div id='visualiser'>
+    <canvas id="canvas" style="border:10px solid #d3d3d3;"></canvas>
+  </div>
+</body>

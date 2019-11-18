@@ -1,0 +1,41 @@
+body {
+  margin: 0em;
+  padding: 0em;
+  font-family: sans-serif;
+  background-color: #252c38;
+}
+
+#sidebar {
+  position: fixed;
+  float: left;
+  width: 15%;
+  height: 100%;
+  color: #D6DBDF;
+  background-color: #1d2129;
+}
+
+#sidebar ul li {
+  padding: 1em;
+  list-style: none;
+}
+
+#sidebar input {
+  width: 85%;
+}
+
+#sidebar h1 {
+  padding: 1em;
+  text-align: center;
+}
+
+#visualiser {
+  float: right;
+  width: 85%;
+  height: 100%;
+}
+
+#canvas {
+  display: block;
+  width: 95%;
+  height: 100%;
+}

@@ -37,13 +37,17 @@ function update() {
   drawLine(top);
   drawLine(bottom);
 
-  let dir = angle > 0  // if traveling towards top
   let rayOrigin = [(width-length)/2, 0];
-  let raySlope = (angle/180) * Math.PI;
+  angle = angle%360
+  let dir = angle < 180  // if travelling towards top
+  let raySlope = (angle/360) * Math.PI*2;
 
   let rayDest
   for (var i = 0; i < 100; i++) {
-   rayDest = [rayOrigin[0] + (thickness/2) / Math.tan(raySlope), thickness*(dir?+1:-1)/2]
+   rayDest = [
+     rayOrigin[0] + Math.abs(rayOrigin[1] - thickness*(dir?+1:-1)/2) / Math.tan(raySlope),
+     thickness*(dir?+1:-1)/2
+   ]
    console.log("rayDest: ", rayDest)
     if (rayDest[0] < (width+length)/2)
       drawLine([rayOrigin, rayDest])
@@ -52,7 +56,10 @@ function update() {
     rayOrigin = rayDest
     dir = !dir
   }
-  rayDest = [rayOrigin[0] + Math.cos(raySlope)*2*thickness, rayOrigin[1] + Math.sin(raySlope)*2*thickness*(dir?+1:-1)]
+  rayDest = [
+    rayOrigin[0] + Math.cos(raySlope)*2*thickness,
+    rayOrigin[1] + Math.sin(raySlope)*2*thickness*(dir?+1:-1)
+  ]
   ctx.setLineDash([5, 3])
   drawLine([rayOrigin, rayDest])
 }

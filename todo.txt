@@ -1,0 +1,10 @@
+-make default values for the lines to go on
+-add padding to the parameters
+-responsiveness
+-make inputs 85% of parent
+
+-scale
+-flip y value?
+-change origin 0 from top left to centre left
+-ES6 the consstsst
+-change canvas height in js rather than css
